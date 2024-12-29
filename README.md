@@ -1,5 +1,3 @@
-The README.md file documents your project for users.
-
 # Ansible LAMP Stack Deployment
 
 This project automates the deployment of a LAMP stack (Linux, Apache, MySQL, PHP) on remote servers using Ansible.
@@ -95,5 +93,4 @@ This project is licensed under the MIT License.
 1. Place these files in the root of your project directory.
 2. Run the playbook as documented in the README.
 
-Let me know if you need additional customization or clarification! 🚀
 
