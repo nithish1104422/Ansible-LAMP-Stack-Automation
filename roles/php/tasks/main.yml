@@ -1,0 +1,23 @@
+---
+- name: Install PHP and required extensions
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - php
+    - php-mysql
+    - php-cli
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-zip
+
+- name: Copy custom php.ini configuration
+  template:
+    src: php.ini.j2
+    dest: /etc/php/{{ php_version }}/apache2/php.ini
+  notify: Restart Apache
+
+- name: Ensure PHP is installed
+  command: php -v

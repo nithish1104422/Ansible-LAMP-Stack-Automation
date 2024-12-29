@@ -1,0 +1,41 @@
+---
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all packages
+  apt:
+    upgrade: dist
+
+- name: Install essential packages
+  apt:
+    name:
+      - vim
+      - curl
+      - git
+      - unzip
+    state: present
+
+- name: Set hostname
+  hostname:
+    name: "{{ ansible_hostname }}"
+
+- name: Configure Message of the Day (MOTD)
+  template:
+    src: motd.j2
+    dest: /etc/motd
+
+- name: Ensure UFW is installed
+  apt:
+    name: ufw
+    state: present
+
+- name: Ensure UFW is enabled
+  command: ufw enable
+  ignore_errors: yes
+
+- name: Allow SSH through UFW
+  ufw:
+    rule: allow
+    name: OpenSSH

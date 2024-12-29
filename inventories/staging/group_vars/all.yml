@@ -1,0 +1,6 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+
+apache_server_name: staging.example.com
+mysql_root_password: staging_root_password
+php_upload_max_filesize: 50M

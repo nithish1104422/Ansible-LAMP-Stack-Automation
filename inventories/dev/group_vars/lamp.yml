@@ -1,0 +1,4 @@
+---
+database_name: lamp_db
+database_user: lamp_user
+database_password: lamp_password

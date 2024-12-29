@@ -1,0 +1,10 @@
+---
+- name: Deploy LAMP stack
+  hosts: lamp
+  become: true
+
+  roles:
+    - role: common
+    - role: apache
+    - role: mysql
+    - role: php

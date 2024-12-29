@@ -1,0 +1,6 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+
+apache_server_name: dev.example.com
+mysql_root_password: dev_root_password
+php_upload_max_filesize: 20M
